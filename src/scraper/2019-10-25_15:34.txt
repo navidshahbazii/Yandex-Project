@@ -1,0 +1,10 @@
+{
+  "results": {
+    "beatles": {}
+  },
+  "metadata": {
+    "elapsed_time": "10868",
+    "ms_per_keyword": "10868",
+    "num_requests": 1
+  }
+}
