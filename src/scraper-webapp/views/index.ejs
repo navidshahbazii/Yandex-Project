@@ -19,16 +19,18 @@
   </header>
 
   <div class="w3-center">
-      <a href="about.html" class="w3-button">About us</a>
+      <a href="about" class="w3-button">About us</a>
       <a href="/" class="w3-button">Main</a>
-      <a href="contact.html" class="w3-button">Contact</a>
+      <a href="contact" class="w3-button">Contact</a>
     </div>
 
 
   <!-- Photo Grid -->
   <div class="w3-row-padding w3-grayscale w3-padding-48" style="margin-bottom:128px ;  text-align: center">
-    <input type="text" class="searchInput" placeholder="search Input">
-    <button> Search </button>
+    <form action="/scrape" method="POST">
+      <input type="text" name ="searchInput" class="searchInput" placeholder="Search Input">
+      <button type="submit"> Scrape </button>
+    </form>
     <div class="w3-padding-16">
       <p>Search Results:</p>
       <span class="results">Here search results will be inserted</span>
