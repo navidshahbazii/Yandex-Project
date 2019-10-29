@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
-const se_scraper = require('se-scraper');
 var bodyParser = require('body-parser');
-var path = require('path')
+var path = require('path');
+var scraper = require('./scraper');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -22,22 +22,9 @@ app.get('/', function (req, res) {
  */
 app.use(bodyParser.json());
 
+//Handler for the POST request that get the user input and starts the scraper
 app.post('/scrape', function (req, res){
-    (async () => {
-        let scrape_job = {
-            search_engine: 'yandex',
-            keywords: [req.body.searchInput],
-              num_pages: 1,
-      	yandex_settings: {
-      		gl:'by'
-      	},
-          };
-
-        var results = await se_scraper.scrape({}, scrape_job);
-
-        console.dir(results, {depth: null, colors: true});
-
-    })();
+    scraper.yscrape(req.body.searchInput);
     res.redirect('/')
 })
 
