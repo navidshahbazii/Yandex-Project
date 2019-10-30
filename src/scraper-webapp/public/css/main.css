@@ -1785,3 +1785,29 @@ html {
     margin: 0;
   }
 
+
+.config {
+  display: inline-block;
+  padding: 50px;
+  text-align: left;
+  float: top;
+}
+
+.domainAns {
+  display: block;
+}
+
+.options {
+  font-weight: bold;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.autoScrap {
+  display: block;
+  text-align:left;
+  line-height: 2.1em;
+
+}
+
+
