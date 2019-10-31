@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/main.css">
+<script src="js/main.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
 <body>
@@ -51,17 +51,43 @@
 
 
                 <div class="config">
-                    <input type="checkbox" name="autoScrap" value="autoScrap" id="autoScrap">
+                    <input type="checkbox" name="autoScrap" value="autoScrap" id="autoScrap" onclick="AutoScrap()">
                     <label for="autoScrap" class="options">Automated-scarping</label>
 
-                    <div class="autoScrap">
-                        <input type="radio" name="auto" disabled> daily
-                        <input type="time" name="usr_time" class="hour" disabled>
+
+                    <div class="autoScrap" disabled>
+                        <input type="radio" name="auto" class="inputfields" onClick="dayPick()" disabled > daily
+                        <select name="time" class="select" disabled>
+                            <option value="00:00">12.00 AM</option>
+                            <option value="01:00">01.00 AM</option>
+                            <option value="02:00">02.00 AM</option>
+                            <option value="03:00">03.00 AM</option>
+                            <option value="04:00">04.00 AM</option>
+                            <option value="05:00">05.00 AM</option>
+                            <option value="06:00">06.00 AM</option>
+                            <option value="07:00">07.00 AM</option>
+                            <option value="08:00">08.00 AM</option>
+                            <option value="09:00">09.00 AM</option>
+                            <option value="10:00">10.00 AM</option>
+                            <option value="11:00">11.00 AM</option>
+                            <option value="12:00">12.00 PM</option>
+                            <option value="13:00">01.00 PM</option>
+                            <option value="14:00">02.00 PM</option>
+                            <option value="15:00">03.00 PM</option>
+                            <option value="16:00">04.00 PM</option>
+                            <option value="17:00">05.00 PM</option>
+                            <option value="18:00">06.00 PM</option>
+                            <option value="19:00">07.00 PM</option>
+                            <option value="20:00">08.00 PM</option>
+                            <option value="21:00">09.00 PM</option>
+                            <option value="22:00">10.00 PM</option>
+                            <option value="23:00">11.00 PM</option>
+                        </select>
                     </div>
 
                     <div class="autoScrap">
-                        <input type="radio" name="auto" disabled> weekly
-                        <select class="radio" id="automated" class="day" disabled>
+                        <input type="radio" name="auto" class="inputfields" onclick="weekPick()" disabled> weekly
+                        <select class="select" id="automated" disabled>
                             <option value="Monday">Monday</option>
                             <option value="Tuesday">Tuesday</option>
                             <option value="Wednesday">Wednesday</option>
@@ -78,8 +104,9 @@
                     <label for="download" class="options">Download?</label>
                 </div>
 
-
-                <button type="submit"> Scrape Yandex</button>
+                <div class="w3-padding-16">
+                    <button type="submit"> Scrape Yandex</button>
+                </div>
 
             </div>
 

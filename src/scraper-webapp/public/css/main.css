@@ -1806,8 +1806,11 @@ html {
 .autoScrap {
   display: block;
   text-align:left;
-  line-height: 2.1em;
-
+  line-height: 2.4em;
 }
 
+.select {
+  margin-left: 20px !important;
+  float: right;
+}
 
