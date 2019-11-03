@@ -28,25 +28,40 @@
 
 
     <!-- Photo Grid -->
-    <div class="w3-row-padding w3-grayscale w3-padding-48" style="margin-bottom:128px ;  text-align: center">
-        <form action="/scrape" method="POST">
-            <input type="text" name="searchInput" class="searchInput" placeholder="Search Input">
 
-            <div class="w3-padding-16">
+    <div class="w3-row-padding w3-grayscale w3-padding-48" style="margin-bottom:10px ;  text-align: center">
+        <form action="/scrape" method="POST">
+          <div class="leittxt">Type search Input or upload CSV file</div>
+
+
+          <input type="file" id="browse" name="fileupload" style="display: none" accept=".csv" onChange="Handlechange();" />
+          <input type="text" id="filename" placeholder="Search Input" class="searchInput" />
+          <input type="button" value="Upload File" id="fakeBrowse" onclick="HandleBrowseClick();"/>
+
+            <!-- <input type="text" name="searchInput" class="searchInput" placeholder="Search Input">
+          OR
+            <input type="file" accept=".csv"> -->
+
+
+            <div class="w3-padding-8">
                 <div class="config">
                     <span class="options">Sub-domain</span>
-                    <label class="domainAns">
-                        <input type="radio" name="answer" checked>
-                        ru
-                    </label>
-                    <label class="domainAns">
-                        <input type="radio" name="answer">
-                        by
-                    </label>
-                    <label class="domainAns">
-                        <input type="radio" name="answer">
-                        kz
-                    </label>
+
+                    <select name="domain" class="domainAns">
+                        <option>yandex.com</option>
+                        <option>yandex.ru</option>
+                        <option>yandex.by</option>
+                        <option>yandex.kz</option>
+                        <option>yandex.ua</option>
+                        <option>yandex.uz</option>
+                        <option>yandex.tr</option>
+                    </select>
+
+                    
+                <div class="w3-padding-24">
+                  <input type="checkbox" name="download" value="download">
+                  <label for="download" class="options">Download?</label>
+              </div>
                 </div>
 
 
@@ -100,11 +115,6 @@
                 </div>
 
                 <div>
-                    <input type="checkbox" name="download" value="download">
-                    <label for="download" class="options">Download?</label>
-                </div>
-
-                <div class="w3-padding-16">
                     <button type="submit"> Scrape Yandex</button>
                 </div>
 
@@ -119,8 +129,8 @@
 </div>
 
 <footer class="footerholder">
-  <span class="footer">by <a href="https://www.qu.tu-berlin.de/menue/qu/" class="footer-button">Quality and Usability Lab</a> . The source code can be found on <a
-              href="" class="footer-button">GitHub </a>.</span>
+  <span class="footer">by <a href="https://www.qu.tu-berlin.de/menue/qu/" class="footer-button">Quality and Usability Lab</a>. The source code can be found on <a
+              href="https://github.com/navidshahbazii/Yandex-Project" class="footer-button">GitHub </a>.</span>
 </footer>
 
 </body>

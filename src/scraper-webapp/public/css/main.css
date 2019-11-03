@@ -1750,7 +1750,7 @@ html {
   }
   
   .footerholder {
-    background: none repeat scroll 0 0 transparent;
+    /* background: none repeat scroll 0 0 transparent; */
     bottom: 0;
     position: fixed;
     text-align: center;
@@ -1765,7 +1765,7 @@ html {
   }
 
   .searchInput {
-    width: 40vw;
+    width: 25vw;
   }
   
   a.footer-button:hover {
@@ -1788,9 +1788,9 @@ html {
 
 .config {
   display: inline-block;
-  padding: 50px;
+  padding: 40px;
+  padding-bottom: 10px;
   text-align: left;
-  float: top;
 }
 
 .domainAns {
@@ -1806,7 +1806,7 @@ html {
 .autoScrap {
   display: block;
   text-align:left;
-  line-height: 2.4em;
+  line-height: 2.5em;
 }
 
 .select {
@@ -1814,3 +1814,19 @@ html {
   float: right;
 }
 
+.leittxt {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+
+.info {
+padding: 10px;
+display: block;
+}
+
+.name {
+  display: block;
+}
