@@ -1,7 +1,7 @@
 const se_scraper = require('se-scraper');
 
 //This module uses the se-scraper to perform the yandex scraping
-exports.yscrape = async function (searchInput) {
+exports.yscrape = async function (searchInput, ru) {
     let scrape_job = {
         search_engine: 'yandex',
         keywords: [searchInput],
@@ -14,5 +14,5 @@ exports.yscrape = async function (searchInput) {
     var results = await se_scraper.scrape({}, scrape_job);
 
     console.dir(results, {depth: null, colors: true});
-
+    console.log(ru)
 }
