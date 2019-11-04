@@ -24,7 +24,11 @@ app.use(bodyParser.json());
 
 //Handler for the POST request that get the user input and starts the scraper
 app.post('/scrape', function (req, res){
+<<<<<<< HEAD
+    scraper.yscrape(req.body.searchInput, req.body.domain, req.body.download);
+=======
     scraper.yscrape(req.body.searchInput, req.body.domain);
+>>>>>>> 03fb627fffc85a3b4b4e7c9d5df0eca0d337e9cf
     res.redirect('/')
 })
 
