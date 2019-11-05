@@ -35,6 +35,7 @@
 
 
           <input type="file" id="browse" name="fileupload" style="display: none" accept=".csv" onChange="Handlechange();" />
+          <input type="text" id="filename" placeholder="Search Input" class="searchInput" name="searchInput" />
           <input type="text" id="filename" placeholder="Search Input" class="searchInput" />
           <input type="button" value="Upload File" id="fakeBrowse" onclick="HandleBrowseClick();"/>
 
@@ -57,7 +58,10 @@
                         <option>yandex.tr</option>
                     </select>
 
-                    
+
+                <div class="w3-padding-24">
+                  <input type="checkbox" name="download" value="true">
+
                 <div class="w3-padding-24">
                   <input type="checkbox" name="download" value="download">
                   <label for="download" class="options">Download?</label>
@@ -67,7 +71,7 @@
 
                 <div class="config">
                     <input type="checkbox" name="autoScrap" value="autoScrap" id="autoScrap" onclick="AutoScrap()">
-                    <label for="autoScrap" class="options">Automated-scarping</label>
+                    <label for="autoScrap" class="options">Automated-scraping</label>
 
 
                     <div class="autoScrap" disabled>
