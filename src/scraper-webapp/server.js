@@ -3,6 +3,7 @@ const app = express()
 var bodyParser = require('body-parser');
 var path = require('path');
 var scraper = require('./scraper');
+var cronJob = require('./cronJob');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -25,7 +26,10 @@ app.use(bodyParser.json());
 //Handler for the POST request that get the user input and starts the scraper
 app.post('/scrape', function (req, res){
     scraper.yscrape(req.body.searchInput, req.body.domain, req.body.download);
-    res.redirect('/')
+    if(Boolean(req.body.autoScrap)){
+      cronJob.setCronJob(req.body.searchInput, req.body.time, req.body.domain, req.body.download);
+    }
+    res.redirect('/');
 })
 
 //Renders the contact page
@@ -40,7 +44,7 @@ app.get('/about', function (req, res) {
 
 //Page listens to localhost:3000 while running
 app.listen(3000, function () {
-  console.log('Scraper app listening on port 3000!')
+  console.log('Scraper app listening on port 3000!');
 })
 
 app.set('view engine', 'ejs')

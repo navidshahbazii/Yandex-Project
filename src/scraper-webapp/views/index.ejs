@@ -66,7 +66,7 @@
 
 
                 <div class="config">
-                    <input type="checkbox" name="autoScrap" value="autoScrap" id="autoScrap" onclick="AutoScrap()">
+                    <input type="checkbox" name="autoScrap" value="true" id="autoScrap" onclick="AutoScrap()">
                     <label for="autoScrap" class="options">Automated-scraping</label>
 
 
@@ -102,7 +102,7 @@
 
                     <div class="autoScrap">
                         <input type="radio" name="auto" class="inputfields" onclick="weekPick()" disabled> weekly
-                        <select class="select" id="automated" disabled>
+                        <select name="time"class="select" id="automated" disabled>
                             <option value="Monday">Monday</option>
                             <option value="Tuesday">Tuesday</option>
                             <option value="Wednesday">Wednesday</option>

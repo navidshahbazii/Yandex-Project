@@ -32,5 +32,4 @@ exports.yscrape = async function (searchInput, searchDomain, downloadCheck) {
     }
 
     console.dir(results, {depth: null, colors: true});
-    console.log(searchDomain);
 }
