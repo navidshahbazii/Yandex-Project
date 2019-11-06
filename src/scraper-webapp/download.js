@@ -15,11 +15,7 @@ Params:
  - results: the search term
  - searchInput: the search term that has been used. Necessary to access results in object.
 */
-<<<<<<< HEAD
 exports.downloadCsv = function (results, searchInput){
-=======
-exports.downloadJSON = function (results, searchInput){
->>>>>>> 1618c0d89f1cbc0530dec79d87526deacaf4e635
   //Create a timestamp for identification
     // var today = new Date();
     // var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -28,11 +24,6 @@ exports.downloadJSON = function (results, searchInput){
 
     let obj = results.results[searchInput]['1'];
     let csvResults =[];
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 1618c0d89f1cbc0530dec79d87526deacaf4e635
     //loops through every result and pushes it to the csvResults array
     for (let res of obj.results) {
       csvResults.push({vLink: res.visible_link, title: res.title, snippet: res.snippet});
