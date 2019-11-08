@@ -1,4 +1,7 @@
 var fs = require('fs');
+const wChecker = require('./websiteChecker');
+const geoip = require('geoip-lite');
+const domainPing = require("domain-ping");
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
     path: './test.csv',
@@ -31,9 +34,14 @@ exports.downloadCsv = function (results, searchInput){
 
     let obj = results.results[searchInput]['1'];
     let csvResults =[];
+
+    //Calls function that cross checks result domains with given dictionary. Return results for all as array. This is why we need a counter variable to access the type per result.
+    let websiteTypes = wChecker.websiteChecker(results, searchInput);
+    var i = 0;
+
     //loops through every result and pushes it to the csvResults array
     for (let res of obj.results) {
-      csvResults.push({timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: "NaN", typWebsite: "NaN"});
+      csvResults.push({timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: "NaN", typWebsite: websiteTypes[i]});
     }
 
     //Use the csvWriter to write results and download it
