@@ -4,14 +4,15 @@ const dow = require('./download')
 /*This module uses the se-scraper to perform the yandex scraping
 @author Elora
 Params:
- - searchInput: the search term
+ - searchInput: the search term(s)
  - searchDomain: the subdomain where the search will be performed, default is yandex.
  - downloadCheck: true if Download option has been ticked off
 */
 exports.yscrape = async function (searchInput, searchDomain, downloadCheck) {
+    searchInput = searchInput.split(',')
     let scrape_job = {
         search_engine: 'yandex',
-        keywords: [searchInput],
+        keywords: searchInput,
           num_pages: 1,
     yandex_settings: {
       yandex_domain: searchDomain
