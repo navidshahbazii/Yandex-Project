@@ -1,19 +1,8 @@
-LINK,TITLE,SNIPPET
-<<<<<<< HEAD
-speedtest.net›ru,Speedtest от Ookla - Глобальный тест скорости...,"Интерактивная проверка связи со всем миром: узнайте пропускную способность своего интернет-соединения!
-"
-test.tankionline.com,Tanki Online Test Server,"Иногда, при необходимости проведения нагрузочных тестов, серверы открыты для всех игроков. В этом случае инвайт-код для входа не требуется. Читать ещё"
-yandex.by›internet/,Яндекс.Интернетометр — проверка скорости интернета,"Тест скорости интернета. IP-адрес, операционная система, версия браузера, cookies, разрешение экрана и другие параметры системы."
-TestoMetrika.com›Тесты,Психологические тесты собраны в одном месте для...,Тест на определение профориентации. Узнать свой психологический возраст. ... Тест IQ для детей от 7 до 16 лет. Тест на склонность к шизофрении. Читать ещё
-kto-chto-gde.ru›Тесты,Интересные тесты на самые разные темы | КТО?ЧТО?ГДЕ?,"Множество полезных и интересных тестов, которые Вы можете пройти онлайн. Тесты из самых разных областей знаний: от психологии, до выживания в опасных..."
-speedtest.net.ru,Speedtest.net.ru - Русский SPEEDTEST. Тест скорости...,"Главная | Что такое: Скорость Пинг Вибрация Скачивание Загрузка | Контакты.
-=======
-speedtest.net,Speedtest by Ookla - The Global Broadband Speed Test,Test your Internet connection bandwidth to locations around the world with this interactive broadband speed test from Ookla.
-en.wikipedia.org›Test,Test - Wikipedia,"Test(s) or TEST may refer to: Test (assessment), an assessment intended to measure the respondents' knowledge or other abilities. Test (group), a jazz collective. Tests (album), a 1998 album by The Microphones. Test (2013 film), an American film...
-"
-test.tankionline.com,Tanki Online Test Server,"Entering a closed test server is only possible with an invite code. ... Remember that rank, score and crystals earned on test servers will never appear on the main servers."
-ru.wikipedia.org›Test,test — Википедия,"test — UNIX-утилита для проверки типа файла и сравнения значений. Возвращает код возврата 0 (истина) или 1 (ложь) в зависимости вычисления выражения expr. Выражения могут быть как унарными, так и бинарными.
-"
-ustaliy.ru›testi/,"Тесты онлайн: самые лучшие, интересные и популярные","Лучшие и популярные тесты онлайн для проверки себя. Пройди тест - испытай мощь своего разума. Я знаю, что у тебя точно все получится.
->>>>>>> 1618c0d89f1cbc0530dec79d87526deacaf4e635
-"
+TIMESTAMP,SEARCHTERM,POSITION,LINK,TITLE,SNIPPET,IPLOCATION,TYPWEBSITE
+2019-11-8_15:23,Berlin,1,"booking.com
+ad",Отели в Берлине – Бронируйте отели онлайн в Берлине,Гарантия лучшей цены.,NaN,NaN
+2019-11-8_15:23,Berlin,2,bz-berlin.de›berlin,Berlin – B.Z. Berlin,"News aus Berlin: Berichte und Hintergründe aus Politik, Wirtschaft und Gesellschaft sowie aktuelle Polizeimeldungen für jeden Berliner Bezirk und Kiez.",NaN,NaN
+2019-11-8_15:23,Berlin,3,berlin-ru.net,Берлин - русскоязычный портал для гостей столицы...,"Berlin-ru.net – это первоочередная инстанция для всех тех русскоговорящих людей, которые желают получить информацию о жизни и работе в Берлине.",NaN,NaN
+2019-11-8_15:23,Berlin,4,berlin,CAMPUS INSTITUT | Weiterbildung Finanz- und...,"Nehmen Sie Kurs auf Expertenstatus Finanzfachwirt/-in (FH) und Betriebswirt/-in bAV (FH). Sachkundelehrgang Rentenberater/-in In Stuttgart, München, Hannover, Köln und Berlin.",NaN,NaN
+2019-11-8_15:23,Berlin,5,tip-berlin.de,Startseite - tip berlin,Das Berliner Stadtmagazin. Aktuelle Tipps und New für das Ausgehen in Berlin.,NaN,NaN
+2019-11-8_15:23,Berlin,6,facebook.com›Berlin,Berlin – the place to be - Home | Facebook,1.7M likes. Willkommen auf der Facebook-Seite von Berlin! Welcome to the Facebook page... ... See more of Berlin – the place to be on Facebook.,NaN,NaN
