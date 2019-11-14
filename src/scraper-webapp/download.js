@@ -45,9 +45,9 @@ exports.downloadCsv = async function (results, searchInput){
 
       const ipOrigin = await hostCountry.getHostCountry(res.link);
       console.log(ipOrigin);*/
-      
-      csvResults.push({timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: "unknown", typWebsite: websiteTypes[i]});
 
+      csvResults.push({timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: /*ipOrigin*/ "unknown", typWebsite: websiteTypes[i]});
+      i++;
     }
 
     //Use the csvWriter to write results and download it
