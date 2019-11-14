@@ -1,7 +1,6 @@
 var fs = require('fs');
 const wChecker = require('./websiteChecker');
-const geoip = require('geoip-lite');
-const domainPing = require("domain-ping");
+const hostCountry = require('./getHostCountry');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const csvWriter = createCsvWriter({
     path: './test.csv',
@@ -25,7 +24,7 @@ Params:
  - searchInput: the search term that has been used. Necessary to access results in object.
 // TODO: If new csv file is created the headers need to be written in. The append flag set to true prevents that.
 */
-exports.downloadCsv = function (results, searchInput){
+exports.downloadCsv = async function (results, searchInput){
   // Create a timestamp for identification
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -41,7 +40,14 @@ exports.downloadCsv = function (results, searchInput){
 
     //loops through every result and pushes it to the csvResults array
     for (let res of obj.results) {
-      csvResults.push({timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: "NaN", typWebsite: websiteTypes[i]});
+      /*calls the function getHostCountry and passes it the result link.
+      At the it works very slowly, so its commented out for now.
+
+      const ipOrigin = await hostCountry.getHostCountry(res.link);
+      console.log(ipOrigin);*/
+      
+      csvResults.push({timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: "unknown", typWebsite: websiteTypes[i]});
+
     }
 
     //Use the csvWriter to write results and download it

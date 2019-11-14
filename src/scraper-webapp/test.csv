@@ -1,8 +1,15 @@
 TIMESTAMP,SEARCHTERM,POSITION,LINK,TITLE,SNIPPET,IPLOCATION,TYPWEBSITE
-2019-11-8_15:23,Berlin,1,"booking.com
-ad",Отели в Берлине – Бронируйте отели онлайн в Берлине,Гарантия лучшей цены.,NaN,NaN
-2019-11-8_15:23,Berlin,2,bz-berlin.de›berlin,Berlin – B.Z. Berlin,"News aus Berlin: Berichte und Hintergründe aus Politik, Wirtschaft und Gesellschaft sowie aktuelle Polizeimeldungen für jeden Berliner Bezirk und Kiez.",NaN,NaN
-2019-11-8_15:23,Berlin,3,berlin-ru.net,Берлин - русскоязычный портал для гостей столицы...,"Berlin-ru.net – это первоочередная инстанция для всех тех русскоговорящих людей, которые желают получить информацию о жизни и работе в Берлине.",NaN,NaN
-2019-11-8_15:23,Berlin,4,berlin,CAMPUS INSTITUT | Weiterbildung Finanz- und...,"Nehmen Sie Kurs auf Expertenstatus Finanzfachwirt/-in (FH) und Betriebswirt/-in bAV (FH). Sachkundelehrgang Rentenberater/-in In Stuttgart, München, Hannover, Köln und Berlin.",NaN,NaN
-2019-11-8_15:23,Berlin,5,tip-berlin.de,Startseite - tip berlin,Das Berliner Stadtmagazin. Aktuelle Tipps und New für das Ausgehen in Berlin.,NaN,NaN
-2019-11-8_15:23,Berlin,6,facebook.com›Berlin,Berlin – the place to be - Home | Facebook,1.7M likes. Willkommen auf der Facebook-Seite von Berlin! Welcome to the Facebook page... ... See more of Berlin – the place to be on Facebook.,NaN,NaN
+2019-11-14_16:9,test,1,speedtest.net,Speedtest by Ookla - The Global Broadband Speed Test,Test your Internet connection bandwidth to locations around the world with this interactive broadband speed test from Ookla.,US,unknown
+2019-11-14_16:9,test,2,test.tankionline.com,Tanki Online Test Server,"Entering a closed test server is only possible with an invite code. ... Remember that rank, score and crystals earned on test servers will never appear on the main servers.",NL,unknown
+2019-11-14_16:9,test,3,en.wikipedia.org›Test,Test - Wikipedia,"Test(s) or TEST may refer to: Test (assessment), an assessment intended to measure the respondents' knowledge or other abilities. Test (group), a jazz collective. Tests (album), a 1998 album by The Microphones. Test (2013 film), an American film...
+",NL,unknown
+2019-11-14_16:9,test,4,ru.wikipedia.org›Test,test — Википедия,"test — UNIX-утилита для проверки типа файла и сравнения значений. Возвращает код возврата 0 (истина) или 1 (ложь) в зависимости вычисления выражения expr. Выражения могут быть как унарными, так и бинарными.
+",NL,unknown
+2019-11-14_16:9,test,5,ustaliy.ru›testi/,"Тесты онлайн: самые лучшие, интересные и популярные","Лучшие и популярные тесты онлайн для проверки себя. Пройди тест - испытай мощь своего разума. Я знаю, что у тебя точно все получится.
+",RU,unknown
+2019-11-14_16:9,test,6,testbook.az›test,Testlər,English. 10413 test. Azərbaycan tarixi. ... 3036 test. Müəllimlərin diaqnostik qiymətləndirilməsi.,US,unknown
+2019-11-14_16:9,test,7,testi.ru,«Testi.ru» — коллекция психологических тестов,"Сборник тестов для мужчин и женщин на темы: характер, интеллект, интимная жизнь, деловая сфера и прочее. Возможность авторизации и регистрации. Личный кабинет. Возможность поиска необходимых тестов по разделам. Разделы тестов: дети, тесты...
+",DE,unknown
+2019-11-14_16:9,test,8,test.io›become-a-tester/,Become a Tester | test IO,"Join Our Testing Community. Become a tester, test the latest apps, websites, and games, and get paid for every issue you find.",US,unknown
+2019-11-14_16:9,test,9,en.wiktionary.org›wiki/test,test - Wiktionary,"(South African) IPA(key): /test/. From Middle English test, teste, borrowed from Old French test, teste (“an earthen vessel, especially a pot in which metals were tried”), from Latin testum (“the lid of an earthen vessel, an earthen vessel, an earthe...
+",NL,unknown
