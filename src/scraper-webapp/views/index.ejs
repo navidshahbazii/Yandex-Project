@@ -1,137 +1,156 @@
 <!DOCTYPE html>
 <html>
 <title>Yandex Scraper</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/main.css">
-<script src="js/main.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
 
 <body>
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-content" style="max-width:1500px">
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-content" style="max-width:1500px">
 
-    <!-- Header -->
-    <header class="w3-panel w3-center w3-opacity" style="padding:0px 16px">
-        <h1 class="mainTitle">Yandex Scraper</h1>
-        <h1 class="w3-xlarge"> Web Scraping for Social Sciences Research</h1>
+        <!-- Header -->
+        <header class="w3-panel w3-center w3-opacity" style="padding:0px 16px">
+            <h1 class="mainTitle">Yandex Scraper</h1>
+            <h1 class="w3-xlarge"> Web Scraping for Social Sciences Research</h1>
 
-    </header>
+            <div class="w3-center">
+                <a href="/" class="w3-button">Main</a>
+                <a href="visualize" class="w3-button">Visualization</a>
+                <a href="about" class="w3-button">About us</a>
+                <a href="contact" class="w3-button">Contact</a>
+            </div>
 
-    <div class="w3-center">
-        <a href="about" class="w3-button">About us</a>
-        <a href="/" class="w3-button">Main</a>
-        <a href="contact" class="w3-button">Contact</a>
-    </div>
-
-
-    <!-- Photo Grid -->
-
-    <div class="w3-row-padding w3-grayscale w3-padding-48" style="margin-bottom:10px ;  text-align: center">
-        <form action="/scrape" method="POST">
-          <div class="leittxt">Type search Input or upload CSV file</div>
+        </header>
 
 
-          <input type="file" id="browse" name="fileupload" style="display: none" accept=".csv" onChange="Handlechange();" />
-          <input type="text" id="filename" placeholder="Search Input" class="searchInput" name="searchInput" />
-          <input type="button" value="Upload File" id="fakeBrowse" onclick="HandleBrowseClick();"/>
 
-            <!-- <input type="text" name="searchInput" class="searchInput" placeholder="Search Input">
-          OR
-            <input type="file" accept=".csv"> -->
+        <!-- Photo Grid -->
 
-
-            <div class="w3-padding-8">
-                <div class="config">
-                    <span class="options">Sub-domain</span>
-
-                    <select name="domain" class="domainAns">
-                        <option>yandex.com</option>
-                        <option>yandex.ru</option>
-                        <option>yandex.by</option>
-                        <option>yandex.kz</option>
-                        <option>yandex.ua</option>
-                        <option>yandex.uz</option>
-                        <option>yandex.tr</option>
-                    </select>
+        <div class="w3-row-padding w3-grayscale w3-padding-24" style="margin-bottom:10px ;  text-align: center">
+            <form action="/scrape" method="POST">
+                <div class="leittxt">Type search Input or upload CSV file, for multiple search terms separate with a
+                    comma</div>
 
 
-                <div class="w3-padding-24">
-                  <input type="checkbox" name="download" value="true">
-                  <label for="download" class="options">Download?</label>
-              </div>
-                </div>
+                <input type="file" id="browse" name="fileupload" style="display: none" accept=".csv"
+                    onChange="Handlechange();" />
+                <input type="text" id="filename" placeholder="Search Input" class="searchInput" name="searchInput" />
+                <input type="button" value="Upload File" id="fakeBrowse" onclick="HandleBrowseClick();" />
 
+                <div class="w3-padding-small">
+                    <div class="config">
+                        <div class="leftOptions">
+                            <span class="options">Sub-domain</span>
+                            <select name="domain" class="domainAns">
+                                <option>yandex.com</option>
+                                <option>yandex.ru</option>
+                                <option>yandex.by</option>
+                                <option>yandex.kz</option>
+                                <option>yandex.ua</option>
+                                <option>yandex.uz</option>
+                                <option>yandex.tr</option>
+                            </select>
+                        </div>
 
-                <div class="config">
-                    <input type="checkbox" name="autoScrap" value="true" id="autoScrap" onclick="AutoScrap()">
-                    <label for="autoScrap" class="options">Automated-scraping</label>
-
-
-                    <div class="autoScrap" disabled>
-                        <input type="radio" name="auto" class="inputfields" onClick="dayPick()" disabled > daily
-                        <select name="time" class="select" disabled>
-                            <option value="00:00">12.00 AM</option>
-                            <option value="01:00">01.00 AM</option>
-                            <option value="02:00">02.00 AM</option>
-                            <option value="03:00">03.00 AM</option>
-                            <option value="04:00">04.00 AM</option>
-                            <option value="05:00">05.00 AM</option>
-                            <option value="06:00">06.00 AM</option>
-                            <option value="07:00">07.00 AM</option>
-                            <option value="08:00">08.00 AM</option>
-                            <option value="09:00">09.00 AM</option>
-                            <option value="10:00">10.00 AM</option>
-                            <option value="11:00">11.00 AM</option>
-                            <option value="12:00">12.00 PM</option>
-                            <option value="13:00">01.00 PM</option>
-                            <option value="14:00">02.00 PM</option>
-                            <option value="15:00">03.00 PM</option>
-                            <option value="16:00">04.00 PM</option>
-                            <option value="17:00">05.00 PM</option>
-                            <option value="18:00">06.00 PM</option>
-                            <option value="19:00">07.00 PM</option>
-                            <option value="20:00">08.00 PM</option>
-                            <option value="21:00">09.00 PM</option>
-                            <option value="22:00">10.00 PM</option>
-                            <option value="23:00">11.00 PM</option>
-                        </select>
+                        <div class="leftOptions">
+                            <input type="checkbox" name="download" value="true">
+                            <label for="download" class="options">Download?</label>
+                        </div>
                     </div>
 
-                    <div class="autoScrap">
-                        <input type="radio" name="auto" class="inputfields" onclick="weekPick()" disabled> weekly
-                        <select name="time"class="select" id="automated" disabled>
-                            <option value="Monday">Monday</option>
-                            <option value="Tuesday">Tuesday</option>
-                            <option value="Wednesday">Wednesday</option>
-                            <option value="Thursday">Thursday</option>
-                            <option value="Friday">Friday</option>
-                            <option value="Saturday">Saturday</option>
-                            <option value="Sunday">Sunday</option>
-                        </select>
+
+                    <div class="config">
+
+
+                        <input type="checkbox" name="autoScrap" value="true" id="autoScrap" onclick="AutoScrap()">
+                        <label for="autoScrap" class="options">Automated-scraping</label>
+
+                        <div class="autoScrap" disabled>
+                            <input type="radio" name="auto" class="inputfields" onClick="dayPick()" disabled> daily
+                            <select name="time" class="select" disabled>
+                                <option value="00:00">12.00 AM</option>
+                                <option value="01:00">01.00 AM</option>
+                                <option value="02:00">02.00 AM</option>
+                                <option value="03:00">03.00 AM</option>
+                                <option value="04:00">04.00 AM</option>
+                                <option value="05:00">05.00 AM</option>
+                                <option value="06:00">06.00 AM</option>
+                                <option value="07:00">07.00 AM</option>
+                                <option value="08:00">08.00 AM</option>
+                                <option value="09:00">09.00 AM</option>
+                                <option value="10:00">10.00 AM</option>
+                                <option value="11:00">11.00 AM</option>
+                                <option value="12:00">12.00 PM</option>
+                                <option value="13:00">01.00 PM</option>
+                                <option value="14:00">02.00 PM</option>
+                                <option value="15:00">03.00 PM</option>
+                                <option value="16:00">04.00 PM</option>
+                                <option value="17:00">05.00 PM</option>
+                                <option value="18:00">06.00 PM</option>
+                                <option value="19:00">07.00 PM</option>
+                                <option value="20:00">08.00 PM</option>
+                                <option value="21:00">09.00 PM</option>
+                                <option value="22:00">10.00 PM</option>
+                                <option value="23:00">11.00 PM</option>
+                            </select>
+                        </div>
+
+                        <div class="autoScrap">
+                            <input type="radio" name="auto" class="inputfields" onclick="weekPick()" disabled> weekly
+                            <select name="time" class="select" id="automated" disabled>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                            </select>
+                        </div>
+
+                        <div class="autoScrap">
+
+                            <label for="start" class="inputfields">Scrape Until:</label>
+                            <input type="date" id="txtDate" name="trip-start" disabled>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="w3-padding-14 w3-padding-top">
+                        E-mail Address: <input type="email" name="email" id="email" placeholder="email@example.com" />
+                    </div>
+
+                    <div>
+
+                        <button type="submit" class="btn btn-danger"> Scrape Yandex</button>
+                    </div>
 
                 <div>
                     <button type="submit" onclick="return empty();"> Scrape Yandex</button>
                 </div>
 
-            </div>
-
-        </form>
+            </form>
 
 
+        </div>
     </div>
-</div>
-<!-- End Page Content -->
-</div>
+    <!-- End Page Content -->
+    </div>
 
-<footer class="footerholder">
-  <span class="footer">by <a href="https://www.qu.tu-berlin.de/menue/qu/" class="footer-button">Quality and Usability Lab</a>. The source code can be found on <a
-              href="https://github.com/navidshahbazii/Yandex-Project" class="footer-button">GitHub </a>.</span>
-</footer>
+    <footer class="footerholder">
+        <span class="footer">by <a href="https://www.qu.tu-berlin.de/menue/qu/" class="footer-button">Quality and
+                Usability Lab</a>. The source code can be found on <a
+                href="https://github.com/navidshahbazii/Yandex-Project" class="footer-button">GitHub </a>.</span>
+    </footer>
 
 </body>
+
 </html>

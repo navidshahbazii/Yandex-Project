@@ -1426,12 +1426,17 @@ a {
 
 .w3-padding-16 {
   padding-top: 16px !important;
-  padding-bottom: 16px !important;
+  /* padding-bottom: 18px !important; */
+}
+
+.w3-padding-14 {
+  /* padding-top: 6px !important; */
+  padding-bottom: 18px !important;
 }
 
 .w3-padding-24 {
   padding-top: 24px !important;
-  padding-bottom: 24px !important;
+  /* padding-bottom: 24px !important; */
 }
 
 .w3-padding-32 {
@@ -1440,7 +1445,7 @@ a {
 }
 
 .w3-padding-48 {
-  padding-top: 48px !important;
+  padding-top: 40px !important;
   padding-bottom: 48px !important;
 }
 
@@ -1449,6 +1454,9 @@ a {
   padding-bottom: 64px !important;
 }
 
+.w3-padding-top {
+  margin-top: -25px;
+}
 .w3-left {
   float: left !important;
 }
@@ -2000,7 +2008,7 @@ a.footer-button:hover {
 }
 
 .searchInput {
-  width: 25vw;
+  width: 320px;
 }
 
 a.footer-button:hover {
@@ -2013,6 +2021,7 @@ a.footer-button:hover {
 
 header {
   background-color: #ececec;
+  box-shadow: 0px 0px 12px -3px rgba(125, 125, 125, 1);
 }
 
 a.back {
@@ -2022,30 +2031,41 @@ a.back {
 
 .config {
   display: inline-block;
-  padding: 40px;
+  padding: 20px;
   padding-bottom: 10px;
   text-align: left;
 }
 
 .domainAns {
   display: block;
+  margin-top: 8px;
 }
 
 .options {
   font-weight: bold;
-  padding-bottom: 10px;
-  display: inline-block;
 }
 
 .autoScrap {
   display: block;
   text-align: left;
-  line-height: 2.5em;
+  line-height: 1.8em;
+  /* min-height: 3em; */
 }
 
+.leftOptions {
+  height: 5.3em;
+}
 .select {
-  margin-left: 20px !important;
   float: right;
+  width: 155px;
+}
+
+#txtDate {
+  width: 155px;
+}
+
+.inputfields {
+  margin-right: 15px;
 }
 
 .leittxt {
@@ -2066,4 +2086,21 @@ a.back {
 
 .name {
   display: block;
+}
+
+#email {
+  width: 200px;
+  margin-left: 16px;
+}
+
+#email[placeholder] {
+  padding-left: 10px;
+}
+
+.nav {
+  background-color: #f1f1f1;
+}
+
+.btn.submit {
+  background-color: red;
 }
