@@ -8,18 +8,34 @@ Params:
  - searchDomain: the subdomain where the search will be performed, default is yandex.
  - downloadCheck: true if Download option has been ticked off
 */
-exports.yscrape = async function (searchInput, searchDomain, downloadCheck) {
+exports.yscrape = async function (searchInput, searchDomain, downloadCheck, googleCheck) {
     searchInput = searchInput.split(',')
-    let scrape_job = {
-        search_engine: 'yandex',
-        keywords: searchInput,
+    var searchEngines = ["yandex", "google"]
+    for (var i = 0; i<searchEngines.length; i++){
+      var engine = searchEngines[i];
+      if(engine == "yandex"){
+        let scrape_job = {
+          search_engine: engine,
+          keywords: searchInput,
           num_pages: 1,
-    yandex_settings: {
-      yandex_domain: searchDomain
-    },
+          yandex_settings: {
+            yandex_domain: searchDomain
+          }
+      }
+      var yandex_results = await se_scraper.scrape({}, scrape_job);
+      }
+      else if(engine == 'google' && Boolean(googleCheck)){
+        let scrape_job = {
+          search_engine: engine,
+          keywords: searchInput,
+          num_pages: 1,
+        }
+        var google_results = await se_scraper.scrape({}, scrape_job);
+      }
+
       };
 
-    var results = await se_scraper.scrape({}, scrape_job);
+
 
     //checks if the download option has been check off. If so calls the download function.
     if(Boolean(downloadCheck)){
@@ -32,5 +48,6 @@ exports.yscrape = async function (searchInput, searchDomain, downloadCheck) {
 
     }
 
-    console.dir(results, {depth: null, colors: true});
+    console.dir(yandex_results, {depth: null, colors: true});
+    console.dir(google_results, {depth: null, colors: true}); 
 }
