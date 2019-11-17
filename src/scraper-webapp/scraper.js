@@ -19,7 +19,14 @@ exports.yscrape = async function (searchInput, searchDomain, downloadCheck) {
     },
       };
 
-    var results = await se_scraper.scrape({}, scrape_job);
+      try {
+        var results = await se_scraper.scrape({}, scrape_job);
+      }
+      catch(error) {
+        console.error(error);
+        return;
+      }
+
 
     //checks if the download option has been check off. If so calls the download function.
     if(Boolean(downloadCheck)){

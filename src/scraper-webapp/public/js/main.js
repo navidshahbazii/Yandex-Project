@@ -52,3 +52,11 @@ function Handlechange() {
   var textinput = document.getElementById("filename");
   textinput.value = fileinput.value;
 }
+
+function empty(){
+  var textinput = document.getElementById("filename").value;
+  if (textinput === "") {
+        alert("Enter a valid SearchInput");
+        return false;
+    };
+}
