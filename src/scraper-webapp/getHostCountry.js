@@ -2,9 +2,9 @@ var ping = require('ping');
 var geoip = require('geoip-lite');
 
 /*
-@author: Elora
 This module filters the domain name of the results out of the link.
 It then pings its IP address and uses the geoip module to look for its country of origin
+@author: Elora
 Params:
   - url: The url of the website that is to be located
 */

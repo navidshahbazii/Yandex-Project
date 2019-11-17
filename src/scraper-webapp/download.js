@@ -20,7 +20,7 @@ const csvWriter = createCsvWriter({
 /*This module downloads the results of the scraping as a .csv file
 @author Elora
 Params:
- - results: the search term
+ - results: the search results
  - searchInput: the search term that has been used. Necessary to access results in object.
 // TODO: If new csv file is created the headers need to be written in. The append flag set to true prevents that.
 */
@@ -31,6 +31,7 @@ exports.downloadCsv = async function (results, searchInput){
     var time = today.getHours() + ":" + today.getMinutes();
     var dateTime = date+'_'+time;
 
+    //accesses the results and create empty array for the csvfile
     let obj = results.results[searchInput]['1'];
     let csvResults =[];
 
@@ -41,12 +42,11 @@ exports.downloadCsv = async function (results, searchInput){
     //loops through every result and pushes it to the csvResults array
     for (let res of obj.results) {
       /*calls the function getHostCountry and passes it the result link.
-      At the it works very slowly, so its commented out for now.
-
+      */
       const ipOrigin = await hostCountry.getHostCountry(res.link);
-      console.log(ipOrigin);*/
+      console.log(ipOrigin);
 
-      csvResults.push({timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: /*ipOrigin*/ "unknown", typWebsite: websiteTypes[i]});
+      csvResults.push({timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: ipOrigin, typWebsite: websiteTypes[i]});
       i++;
     }
 

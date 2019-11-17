@@ -5,10 +5,15 @@ const other =["other","newsplot.ru","mygolos.org","vseslova.ru", "jashtar.kg", "
 const personal = ["personal","verola.livejournal.com", "burckina-new.livejournal.com", "chervonec-001.livejournal.com","el-murid.livejournal.com","hrclip.net","kaputsin.com", "mr-clip.com", "geclip.com", "онвамнедимон.рф", "alexeyborisov.ru", "npetroff.livejournal.com", "economics-prorok.com", "ficlips.com", "yablor.ru", "verola.livejournal.com", "russianinterest.livejournal.com", "andrey-che.livejournal.com", "syoutube.ru", "sibnarkomat.livejournal.com", "krclip.com", "slclip.com", "facebook.com", "videolike.org", "de-vid.com", "plclip.com", "tatyana-0953.livejournal.com", "nsportal.ru", "video.sibnet.ru", "thevidosss.ru", "vevo.site", "isclips.com", "frclip.com", "tutuskania.livejournal.com", "idclips.com", "trclips.com", "uzclip.net", "no-clip.com", "thequestion.ru", "cnclip.net", "coub.com", "videosok.tv", "rurik-l.livejournal.com", "kino-hd720.net", "usclip.net", "tjournal.ru", "m-kalashnikov.livejournal.com", "sosed-domosed.ru", "maxim-nm.livejournal.com", "thclips.com", "philologist.livejournal.com", "liveam.tv", "portall.zp.ua", "zadumov.livejournal.com", "youtube.d3.ru", "tvclip.biz", "navalny.com", "gagarin-ibragim.livejournal.com", "dimagrib.livejournal.com", "twitter.com", "kinosklad.net", "instagram.com", "etoonda.livejournal.com", "alimero.ru", "trinixy.ru", "kinoluvr.net", "ok.ru", "digitall-angell.livejournal.com", "otvet.mail.ru", "bolshoyvopros.ru", "yaplakal.com", "varlamov.ru", "dimon.navalny.com", "pikabu.ru", "vk.com", "youtube.com", "ruxpert.ru", "avmalgin.livejournal.com", "colonelcassad.livejournal.com", "2ch.hk", "2018.navalny.com", "rus952.blogspot.com", "lurkmore.to"]
 
 let websiteTypes=[news_websites,foreign_news_websites,encyclopedia,other,personal];
+
 /*
-@author: Elora
 This module uses the provided website dictionary to declare a type for the website.
-If the website is not given in the dictionary it will return an unknown*/
+If the website is not given in the dictionary it will return an unknown
+@author: Elora
+Params:
+  -results: the search results
+  -searchInput: the search term that has been used. Necessary to access results in object.
+  */
 exports.websiteChecker = function (results, searchInput){
   let obj = results.results[searchInput]['1'];
   let checked = [];
@@ -24,7 +29,6 @@ exports.websiteChecker = function (results, searchInput){
     }
     checked.push(foundType);
   }
-  console.log(checked);
   return checked;
 
 }

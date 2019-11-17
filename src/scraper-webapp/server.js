@@ -25,14 +25,11 @@ app.use(bodyParser.json());
 
 //Handler for the POST request that get the user input and starts the scraper
 app.post("/scrape", function(req, res) {
-  scraper.yscrape(req.body.searchInput, req.body.domain, req.body.download);
+
+  scraper.yscrape(req.body.searchInput, req.body.domain, req.body.download, req.body.google);
+
   if (Boolean(req.body.autoScrap)) {
-    cronJob.setCronJob(
-      req.body.searchInput,
-      req.body.time,
-      req.body.domain,
-      req.body.download
-    );
+    cronJob.setCronJob(req.body.searchInput,req.body.time,req.body.domain,req.body.download,req.body.tripStart);
   }
   res.redirect("/");
 });

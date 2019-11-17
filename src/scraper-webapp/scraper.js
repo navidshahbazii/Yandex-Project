@@ -37,17 +37,20 @@ exports.yscrape = async function (searchInput, searchDomain, downloadCheck, goog
 
 
 
+
     //checks if the download option has been check off. If so calls the download function.
     if(Boolean(downloadCheck)){
-      try{
+      if(Array.isArray(searchInput)){
+        for(let searchTerm of searchInput){
+          dow.downloadCsv(results, searchTerm);
+        }
+      }else{
         dow.downloadCsv(results, searchInput);
-      }
-      catch(error){
-        console.log(error);
       }
 
     }
 
     console.dir(yandex_results, {depth: null, colors: true});
     console.dir(google_results, {depth: null, colors: true}); 
+    // console.dir(results, {depth: null, colors: true});
 }
