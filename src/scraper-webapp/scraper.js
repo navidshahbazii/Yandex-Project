@@ -19,25 +19,20 @@ exports.yscrape = async function (searchInput, searchDomain, downloadCheck) {
     },
       };
 
-      try {
-        var results = await se_scraper.scrape({}, scrape_job);
-      }
-      catch(error) {
-        console.error(error);
-        return;
-      }
+    var results = await se_scraper.scrape({}, scrape_job);
 
 
     //checks if the download option has been check off. If so calls the download function.
     if(Boolean(downloadCheck)){
-      try{
+      if(Array.isArray(searchInput)){
+        for(let searchTerm of searchInput){
+          dow.downloadCsv(results, searchTerm);
+        }
+      }else{
         dow.downloadCsv(results, searchInput);
-      }
-      catch(error){
-        console.log(error);
       }
 
     }
 
-    console.dir(results, {depth: null, colors: true});
+    // console.dir(results, {depth: null, colors: true});
 }

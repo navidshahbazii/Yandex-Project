@@ -5,9 +5,10 @@ Params:
  - time: the selected time at which the CRONJOB is activated. Either a day of the week (once a week) or an hour (repeat daily in that case)
  - searchDomain: the subdomain where the search will be performed, default is yandex.
  - downloadCheck: true if Download option has been ticked off
+ - endDate: Date when to stop scraping
 */
 
-exports.setCronJob = function (searchInput, time, searchDomain, downloadCheck){
+exports.setCronJob = function (searchInput, time, searchDomain, downloadCheck, endDate){
   console.log(time);
 
 }
