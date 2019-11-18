@@ -10,47 +10,48 @@ Params:
 */
 exports.yscrape = async function (searchInput, searchDomain, downloadCheck, googleCheck) {
     searchInput = searchInput.split(',')
-    var searchEngines = ["yandex", "google"]
-    for (var i = 0; i<searchEngines.length; i++){
-      var engine = searchEngines[i];
-      if(engine == "yandex"){
-        let scrape_job = {
-          search_engine: engine,
-          keywords: searchInput,
-          num_pages: 1,
-          yandex_settings: {
-            yandex_domain: searchDomain
-          }
+
+    if(Boolean(googleCheck)){
+      let scrape_job = {
+        search_engine: 'google',
+        keywords: searchInput,
+        num_pages: 1,
       }
-      var yandex_results = await se_scraper.scrape({}, scrape_job);
+      var results = await se_scraper.scrape({}, scrape_job);
+      if(Boolean(downloadCheck)){
+        downloadAsCsv(results, searchInput,"google.com");
       }
-      else if(engine == 'google' && Boolean(googleCheck)){
-        let scrape_job = {
-          search_engine: engine,
-          keywords: searchInput,
-          num_pages: 1,
+    }
+    else{
+      let scrape_job = {
+        search_engine: 'yandex',
+        keywords: searchInput,
+        num_pages: 1,
+        yandex_settings: {
+          yandex_domain: searchDomain
         }
-        var google_results = await se_scraper.scrape({}, scrape_job);
       }
-
-      };
-
+      var results = await se_scraper.scrape({}, scrape_job);
+      if(Boolean(downloadCheck)){
+        downloadAsCsv(results, searchInput,String(searchDomain));
+      }
+    }
 
 
 
     //checks if the download option has been check off. If so calls the download function.
-    if(Boolean(downloadCheck)){
-      if(Array.isArray(searchInput)){
-        for(let searchTerm of searchInput){
-          dow.downloadCsv(results, searchTerm);
-        }
-      }else{
-        dow.downloadCsv(results, searchInput);
+
+    console.dir(results, {depth: null, colors: true});
+
+}
+
+function downloadAsCsv(results, searchInput,searchDomain){
+    if(Array.isArray(searchInput)){
+      for(let searchTerm of searchInput){
+        dow.downloadCsv(results, searchTerm, searchDomain);
       }
+    }else{
+      dow.downloadCsv(results, searchInput, searchDomain);
 
-    }
-
-    console.dir(yandex_results, {depth: null, colors: true});
-    console.dir(google_results, {depth: null, colors: true}); 
-    // console.dir(results, {depth: null, colors: true});
+}
 }
