@@ -1455,7 +1455,7 @@ a {
 }
 
 .w3-padding-top {
-  margin-top: -25px;
+  margin-top: 25px;
 }
 .w3-left {
   float: left !important;
@@ -2036,29 +2036,31 @@ a.back {
   text-align: left;
 }
 
-.domainAns {
-  display: block;
-  margin-top: 8px;
-}
-
 .options {
   font-weight: bold;
 }
 
-.autoScrap {
-  display: block;
-  text-align: left;
-  line-height: 1.8em;
-  /* min-height: 3em; */
-}
-
 .leftOptions {
-  height: 5.3em;
+  line-height: 2.4em;
 }
 .select {
   float: right;
   width: 155px;
 }
+
+.domainAns {
+  display: block;
+  margin-bottom: 8px;
+}
+
+
+.autoScrap {
+  display: block;
+  text-align: left;
+  line-height: 2.1em;
+  margin-top: 4px;
+}
+
 
 #txtDate {
   width: 155px;
@@ -2099,8 +2101,4 @@ a.back {
 
 .nav {
   background-color: #f1f1f1;
-}
-
-.btn.submit {
-  background-color: red;
 }
