@@ -2,8 +2,14 @@ var fs = require('fs');
 const wChecker = require('./websiteChecker');
 const hostCountry = require('./getHostCountry');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+
+// Get current month and year to make new .csv file every month
+var today = new Date();
+var monthYear = today.getFullYear()+'_'+(today.getMonth()+1);
+
+// Configuration for the csv-writer. Path should be decided on before we make the tool available.
 const csvWriter = createCsvWriter({
-    path: './test.csv',
+    path: './'+monthYear+'.csv',
     header: [
         {id: 'scrapeDomain', title: 'SCRAPEDOMAIN'},
         {id: 'timestamp', title: 'TIMESTAMP'},
@@ -15,8 +21,17 @@ const csvWriter = createCsvWriter({
         {id: 'ipLocation', title: 'IPLOCATION'},
         {id: 'typWebsite', title: 'TYPWEBSITE'}
     ],
-    // append: true
+    // If the .csv file for the current month already exists we will append the results.
+    // Otherwise we will write the headers for the new file.
+    append: (() => {
+    if (fs.existsSync('./'+monthYear+'.csv')) {
+      return true;
+    } else {
+      return false;
+    }
+   })()
 });
+
 
 /*This module downloads the results of the scraping as a .csv file
 @author Elora
@@ -24,11 +39,9 @@ Params:
  - results: the search results
  - searchInput: the search term that has been used. Necessary to access results in object.
  - searchDomain: Google or Yandex Subdomain
-// TODO: If new csv file is created the headers need to be written in. The append flag set to true prevents that.
 */
 exports.downloadCsv = async function (results, searchInput, searchDomain){
   // Create a timestamp for identification
-    var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes();
     var dateTime = date+'_'+time;
@@ -43,10 +56,8 @@ exports.downloadCsv = async function (results, searchInput, searchDomain){
 
     //loops through every result and pushes it to the csvResults array
     for (let res of obj.results) {
-      /*calls the function getHostCountry and passes it the result link.
-      */
+      //calls the function getHostCountry and passes it the result link.
       const ipOrigin = await hostCountry.getHostCountry(res.link);
-      console.log(ipOrigin);
 
       csvResults.push({scrapeDomain: searchDomain, timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: ipOrigin, typWebsite: websiteTypes[i]});
       i++;
