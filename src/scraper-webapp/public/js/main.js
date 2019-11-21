@@ -61,10 +61,10 @@ function Handlechange() {
   var textinput = document.getElementById("filename");
   textinput.value = fileinput.value;
 }
-function empty(){
+function validInput(){
   var textinput = document.getElementById("filename").value;
-  if (textinput === "") {
-        alert("Enter a valid SearchInput");
+  if (textinput === "" || textinput.split(",").length >10) {
+        alert("Enter a valid search term. Only 10 search terms at a time will be accepted.");
         return false;
     };
 }
