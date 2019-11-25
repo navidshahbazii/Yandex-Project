@@ -5,21 +5,21 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 // Get current month and year to make new .csv file every month
 var today = new Date();
-var monthYear = today.getFullYear()+'_'+(today.getMonth()+1);
+var monthYear = today.getFullYear()+'-'+(today.getMonth()+1);
 
 // Configuration for the csv-writer. Path should be decided on before we make the tool available.
 const csvWriter = createCsvWriter({
     path: './'+monthYear+'.csv',
     header: [
-        {id: 'scrapeDomain', title: 'SCRAPEDOMAIN'},
-        {id: 'timestamp', title: 'TIMESTAMP'},
-        {id: 'searchTerm', title: 'SEARCHTERM'},
-        {id: 'position', title: 'POSITION'},
-        {id: 'vLink', title: 'LINK'},
-        {id: 'title', title: 'TITLE'},
-        {id: 'snippet', title: 'SNIPPET'},
-        {id: 'ipLocation', title: 'IPLOCATION'},
-        {id: 'typWebsite', title: 'TYPWEBSITE'}
+        {id: 'searchEngine', title: 'search_engine'},
+        {id: 'searchTerm', title: 'search_term'},
+        {id: 'vLink', title: 'link'},
+        {id: 'title', title: 'title'},
+        {id: 'snippet', title: 'snippet'},
+        {id: 'rank', title: 'rank'},
+        {id: 'siteLocation', title: 'site_location'},
+        {id: 'siteType', title: 'site_type'},
+        {id: 'timestamp', title: 'datetime'}
     ],
     // If the .csv file for the current month already exists we will append the results.
     // Otherwise we will write the headers for the new file.
@@ -59,7 +59,7 @@ exports.downloadCsv = async function (results, searchInput, searchDomain){
       //calls the function getHostCountry and passes it the result link.
       const ipOrigin = await hostCountry.getHostCountry(res.link);
 
-      csvResults.push({scrapeDomain: searchDomain, timestamp: dateTime, searchTerm: searchInput, position: res.rank,  vLink: res.visible_link, title: res.title, snippet: res.snippet, ipLocation: ipOrigin, typWebsite: websiteTypes[i]});
+      csvResults.push({searchEngine: searchDomain, searchTerm: searchInput,  vLink: res.visible_link, title: res.title, snippet: res.snippet, rank: res.rank, siteLocation: ipOrigin, siteType: websiteTypes[i], timestamp: dateTime});
       i++;
     }
 
