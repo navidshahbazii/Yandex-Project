@@ -2053,14 +2053,12 @@ a.back {
   margin-bottom: 8px;
 }
 
-
 .autoScrap {
   display: block;
   text-align: left;
   line-height: 2.1em;
   margin-top: 4px;
 }
-
 
 #txtDate {
   width: 155px;
@@ -2101,4 +2099,15 @@ a.back {
 
 .nav {
   background-color: #f1f1f1;
+}
+
+.visualize {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 999999;
 }
