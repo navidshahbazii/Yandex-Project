@@ -37,14 +37,10 @@
 
         <div class="w3-row-padding w3-grayscale w3-padding-24" style="margin-bottom:10px ;  text-align: center">
             <form action="/scrape" method="POST">
-                <div class="leittxt">Type search Input or upload CSV file, for multiple search terms separate with a
+                <div class="leittxt">Type search input, for multiple search terms (max. 10) separate with a
                     comma</div>
-
-
-                <input type="file" id="browse" name="fileupload" style="display: none" accept=".csv"
-                    onChange="Handlechange();" />
                 <input type="text" id="filename" placeholder="Search Input" class="searchInput" name="searchInput" />
-                <input type="button" value="Upload File" id="fakeBrowse" onclick="HandleBrowseClick();" />
+
 
                 <div class="w3-padding-small">
                     <div class="config">
@@ -67,7 +63,7 @@
                         </div>
                         <div class="leftOptions">
                             <input type="checkbox" name="google" class="options" value="true">
-                            <label for="download" class="options">Scrape Google</label>
+                            <label for="download" class="options">Scrape Google instead</label>
                         </div>
                     </div>
 
